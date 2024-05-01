@@ -81,7 +81,8 @@
 
   .flip-card {
     width: 400px;
-    height:400px
+    height:400px;
+    margin:10px
   }
   
   .flip-card-inner {
