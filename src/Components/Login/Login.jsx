@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate  } from 'react-router-dom';
 import './Login.css';
 import image from '../assests/images/logo.png'
 import 'react-phone-number-input/style.css'
-import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber } from 'react-phone-number-input'
-import LoadingIcons from 'react-loading-icons'
+import PhoneInput from 'react-phone-number-input'
 
 const Login = () => {
+    const navigate = useNavigate();
 
     const [value, setValue] = useState('')
 
@@ -39,9 +40,17 @@ const Login = () => {
         }
     }
 
+    const otpChange = () =>{
+        setClassName('')
+    }
+
+    const Login = () =>{
+        navigate("/schoolDetails");
+    }
+
     return (
         <div class="container flip-card">
-            <div className={name ? 'flip-card-inner-rotate flip-card-inner' : 'flip-card-inner'}>
+            <div className={name ? `${name} flip-card-inner` : 'flip-card-inner'}>
                 <div class="flip-card-front">
                     <span>Login</span>
                     <img src={image} title="poc" className="logo" />
@@ -67,12 +76,11 @@ const Login = () => {
                         <input type="text" value={otp3} className="field 3" maxlength="1" />
                         <input type="text" value={otp4} className="field 4" maxlength="1" />
                     </div>
-                    <button type="button" className="getOtp">
+                    <button type="button" className="getOtp" onClick={Login}>
                         Login
                     </button>
-                    <button className="resend">
+                    <button className="resend" onClick={otpChange}>
                         Resend OTP
-                        <i class="fa fa-caret-right"></i>
                     </button>
                 </div>
             </div>
