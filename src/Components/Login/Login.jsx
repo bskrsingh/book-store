@@ -49,7 +49,7 @@ const Login = () => {
     }
 
     return (
-        <div class="container flip-card">
+        <div class="containers flip-card">
             <div className={name ? `${name} flip-card-inner` : 'flip-card-inner'}>
                 <div class="flip-card-front">
                     <span>Login</span>
