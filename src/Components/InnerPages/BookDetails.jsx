@@ -6,6 +6,8 @@ import image from '../assests/images/logo.png';
 
 import Card from 'react-bootstrap/Card';
 
+import Button from 'react-bootstrap/Button';
+
 const BookDetails = () => {
 
     const navigate = useNavigate();
