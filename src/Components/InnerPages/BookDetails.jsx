@@ -36,11 +36,11 @@ const BookDetails = () => {
     }, []);
 
     return (
-        <div className='containers flip-card'>
+        <div className='containers card'>
             <Card border="primary" className='cardProps'>
                 <Card.Body>
                     <img src={image} title="poc" className="logo" />
-                    <div className="ag-theme-quartz" style={{ height: 200 }}>
+                    <div className="ag-theme-quartz" style={{ height: 200,margin: 10 }}>
                         <AgGridReact
                             rowData={rowData}
                             columnDefs={columnDefs}
