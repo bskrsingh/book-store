@@ -4,6 +4,7 @@ import './Login.css';
 import image from '../assests/images/logo.png'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import { Button } from "react-bootstrap";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -59,9 +60,9 @@ const Login = () => {
                         placeholder="Enter phone number"
                         value={value}
                         onChange={setValue} />
-                    <button type="button" className="getOtp" onClick={handleGetOTP}>
+                    <Button type="button" variant="primary" className="btnAlign" onClick={handleGetOTP}>
                         Get OTP
-                    </button>
+                    </Button>
                 </div>
                 <div className="flip-card-back">
                     <h3 className="title">OTP Verification</h3>
@@ -76,12 +77,12 @@ const Login = () => {
                         <input type="text" value={otp3} className="field 3" maxlength="1" />
                         <input type="text" value={otp4} className="field 4" maxlength="1" />
                     </div>
-                    <button type="button" className="getOtp" onClick={Login}>
+                    <Button type="button" className="btnAlign" variant="primary" onClick={Login}>
                         Login
-                    </button>
-                    <button className="resend" onClick={otpChange}>
+                    </Button>
+                    <Button className="resend" onClick={otpChange}>
                         Resend OTP
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>
