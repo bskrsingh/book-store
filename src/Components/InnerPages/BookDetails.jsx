@@ -1,8 +1,10 @@
-import React, { useMemo, useState, StrictMode } from 'react';
-import {AgGridReact} from 'ag-grid-react';
+import React, { useMemo, useState } from 'react';
+import { AgGridReact } from 'ag-grid-react';
 
 import { useNavigate } from 'react-router-dom';
 import image from '../assests/images/logo.png';
+
+import Card from 'react-bootstrap/Card';
 
 const BookDetails = () => {
 
@@ -14,10 +16,12 @@ const BookDetails = () => {
 
     const [rowData, setRowData] = useState([
         { id: '12', bookName: 'Dragon war', comments: 'text xyz' },
+        { id: '13', bookName: 'Dragon war 2nd', comments: 'text xyz' },
+        { id: '14', bookName: 'Dragon war 3rd', comments: 'text xyz' },
     ]);
 
     const [columnDefs, setColumnDefs] = useState([
-        { field: "id", checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor'},
+        { field: "id", checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
         { field: "bookName", checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
         { field: "comments", filter: 'agNumberColumnFilter', checkboxSelection: false, editable: true, cellEditor: 'agSelectCellEditor' },
     ]);
@@ -31,19 +35,23 @@ const BookDetails = () => {
 
     return (
         <div className='containers flip-card'>
-            <img src={image} title="poc" className="logo" />
-            <div className="ag-theme-quartz" style={{ height: 500 }}>
-                <AgGridReact
-                    rowData={rowData}
-                    columnDefs={columnDefs}
-                    defaultColDef={defaultColDef}
-                    rowSelection="multiple"
-                    suppressRowClickSelection={true}
-                    pagination={true}
-                    paginationPageSize={10}
-                    paginationPageSizeSelector={[10, 25, 50]}
-                />
-            </div>
+            <Card border="primary" className='cardProps'>
+                <Card.Body>
+                    <img src={image} title="poc" className="logo" />
+                    <div className="ag-theme-quartz" style={{ height: 200 }}>
+                        <AgGridReact
+                            rowData={rowData}
+                            columnDefs={columnDefs}
+                            defaultColDef={defaultColDef}
+                            rowSelection="multiple"
+                            suppressRowClickSelection={true}
+                            pagination={false}
+                            paginationPageSize={10}
+                            paginationPageSizeSelector={[10, 25, 50]}
+                        />
+                    </div>
+                </Card.Body>
+            </Card>
         </div>
     )
 }
