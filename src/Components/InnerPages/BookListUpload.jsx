@@ -1,9 +1,17 @@
+import React from "react";
+import { useNavigate  } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import image from '../assests/images/logo.png'
+import image from '../assests/images/logo.png';
 
 const BooKListUpload = () => {
+    const navigate = useNavigate();
+
+    const UploadBooks = () =>{
+        navigate("/bookDetails");
+    }
+
     return (
         <div className='containers flip-card'>
             <Card border="primary" className='cardProps'>
@@ -18,7 +26,7 @@ const BooKListUpload = () => {
                             <Form.Label>Quote</Form.Label>
                             <Form.Control type="text" placeholder="Enter School name" />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" onClick={UploadBooks}>
                             Submit
                         </Button>
                     </Form>

@@ -5,7 +5,11 @@ import './index.css';
 import Login from './Components/Login/Login';
 import SchoolDetails from './Components/InnerPages/SchoolDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-quartz.css';
 import BooKListUpload from './Components/InnerPages/BookListUpload';
+import BookDetails from './Components/InnerPages/BookDetails';
+import BookListing from './Components/InnerPages/BookListing';
 
 export default function App() {
   return (
@@ -14,6 +18,8 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="/schoolDetails" element={<SchoolDetails />} />
         <Route path="/uploadBook" element={<BooKListUpload />} />
+        <Route path="/bookDetails" element={<BookDetails />} />
+        <Route path="/bookListing" element={<BookListing />} />
       </Routes>
     </HashRouter>
   );
