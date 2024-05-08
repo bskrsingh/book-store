@@ -50,6 +50,10 @@ const BookDetails = () => {
                             paginationPageSizeSelector={[10, 25, 50]}
                         />
                     </div>
+
+                    <Button variant="primary" type="submit" onClick={SaveBookDetails}>
+                            Submit
+                        </Button>
                 </Card.Body>
             </Card>
         </div>
