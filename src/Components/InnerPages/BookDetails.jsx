@@ -40,7 +40,7 @@ const BookDetails = () => {
             <Card border="primary" className='cardProps'>
                 <Card.Body>
                     <img src={image} title="poc" className="logo" />
-                    <div className="ag-theme-quartz" style={{ height: 200,margin: 10 }}>
+                    <div className="ag-theme-quartz" style={{ height: 200 }}>
                         <AgGridReact
                             rowData={rowData}
                             columnDefs={columnDefs}
@@ -52,8 +52,7 @@ const BookDetails = () => {
                             paginationPageSizeSelector={[10, 25, 50]}
                         />
                     </div>
-
-                    <Button variant="primary" type="submit" onClick={SaveBookDetails}>
+                    <Button variant="primary" type="submit" className='m10' onClick={SaveBookDetails}>
                             Submit
                         </Button>
                 </Card.Body>

@@ -49,7 +49,7 @@ const BookDetails = () => {
             <Card border="primary" className='cardProps'>
                 <Card.Body>
                     <img src={image} title="poc" className="logo" />
-                    <div className="ag-theme-quartz" style={{ height: 300,margin: 10,overflow:'auto' }}>
+                    <div className="ag-theme-quartz" style={{ height: 300,overflow:'auto' }}>
                         <span className='heading'>Book</span>
                         <AgGridReact
                             rowData={bookrowData}
@@ -63,7 +63,7 @@ const BookDetails = () => {
                         />
                     </div>
 
-                    <div className="ag-theme-quartz" style={{ height: 300,margin: 10, overflow:'auto' }}>
+                    <div className="ag-theme-quartz" style={{ height: 300, overflow:'auto' }}>
                     <span className='heading'>File</span>
                         <AgGridReact
                             rowData={filerowData}
